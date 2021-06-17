@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node build/server.js",
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc src/server.ts",
+    "build": "tsc",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
   },
   "keywords": [],

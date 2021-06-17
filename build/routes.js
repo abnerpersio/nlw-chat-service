@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routes = void 0;
+var express_1 = require("express");
+var MessagesController_1 = require("./controllers/MessagesController");
+var SettingsController_1 = require("./controllers/SettingsController");
+var UsersController_1 = require("./controllers/UsersController");
+var routes = express_1.Router();
+exports.routes = routes;
+var settingsController = new SettingsController_1.SettingsController();
+var usersController = new UsersController_1.UsersController();
+var messagesController = new MessagesController_1.MessagesController();
+routes.post('/settings', settingsController.create);
+routes.get('/settings/:username', settingsController.findByUsername);
+routes.put('/settings/:username', settingsController.update);
+routes.post('/users', usersController.create);
+routes.post('/messages', messagesController.create);
+routes.get('/messages/:id', messagesController.list);
